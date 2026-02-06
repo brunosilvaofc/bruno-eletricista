@@ -26,7 +26,7 @@ export function Footer() {
 
           <div className="flex items-center gap-4">
             <a
-              href="https://wa.me/5521975931852"
+              href="https://wa.me/5521973003648"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors"

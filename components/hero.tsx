@@ -40,7 +40,7 @@ export function Hero() {
               className="bg-secondary text-secondary-foreground hover:bg-secondary/90 text-lg px-8 py-6"
             >
               <a
-                href="https://wa.me/5521975931852?text=Olá! Gostaria de solicitar um orçamento."
+                href="https://wa.me/5521973003648?text=Olá! Gostaria de solicitar um orçamento."
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -53,7 +53,7 @@ export function Hero() {
               variant="outline"
               className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground text-lg px-8 py-6 bg-transparent"
             >
-              <a href="tel:+5521975931852">Ligar Agora</a>
+              <a href="tel:+5521973003648">Ligar Agora</a>
             </Button>
           </div>
 
