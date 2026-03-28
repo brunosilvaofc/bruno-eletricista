@@ -72,7 +72,7 @@ export function Header() {
               <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 mt-2 w-full">
                 <a href="tel:+5521973003648" className="flex items-center justify-center gap-2">
                   <Phone className="w-4 h-4" />
-                  <span>(21) 97300-3648</span>
+                  <span>(21) 97593-1852</span>
                 </a>
               </Button>
             </div>
