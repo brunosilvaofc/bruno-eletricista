@@ -25,12 +25,11 @@ export function Hero() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-6 leading-tight text-balance">
-            Parte Elétrica e Pequenos Reparos em Geral
+            Segurança Elétrica para seu Lar ou Empresa.
           </h1>
 
           <p className="text-lg md:text-xl text-secondary/90 mb-8 max-w-2xl mx-auto text-pretty">
-            Serviços elétricos de qualidade com segurança e profissionalismo. Atendimento rápido e orçamento sem
-            compromisso.
+            Conte com um especialista para proteger seu patrimônio. Atendimento ágil, normas técnicas (NBR-5410) seguidas à risca e a tranquilidade que sua família merece.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
