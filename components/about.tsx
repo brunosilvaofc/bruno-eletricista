@@ -24,9 +24,7 @@ export function About() {
               Por que escolher Bruno Eletricista?
             </h2>
             <p className="text-secondary-foreground/80 mb-8 text-lg leading-relaxed text-pretty">
-              Ofereço serviços elétricos de alta qualidade para residências e
-              comércios no Rio de Janeiro. Meu compromisso é garantir a segurança e satisfação de cada cliente, sempre
-              utilizando materiais de primeira linha e seguindo todas as normas técnicas.
+              Sou profissional capacitado em instalações elétricas residenciais, com formação certificada e foco total em segurança, qualidade e eficiência em cada serviço realizado.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4">
