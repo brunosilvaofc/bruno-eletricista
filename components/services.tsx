@@ -71,10 +71,6 @@ export function Services() {
         </div>
 
         <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full">
-            <Zap className="w-5 h-5" />
-            <span className="font-semibold">10% de desconto para pagamento via PIX!</span>
-          </div>
         </div>
       </div>
     </section>
