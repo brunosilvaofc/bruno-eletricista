@@ -7,10 +7,9 @@ import './globals.css'
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Bruno Eletricista - Serviços Elétricos Profissionais',
-  description: 'Serviços elétricos de qualidade no Rio de Janeiro. Instalação, manutenção, reparos elétricos residenciais e comerciais. Ligue: (21) 97300-3648',
+  title: 'Eletricista Bruno - Serviços Elétricos Profissionais',
+  description: 'Serviços elétricos de qualidade. Instalação, manutenção, reparos elétricos residenciais e comerciais. Ligue: (21) 99306-7569',
   keywords: 'eletricista, serviços elétricos, instalação elétrica, Rio de Janeiro, reparos elétricos',
-    generator: 'v0.app'
 }
 
 export default function RootLayout({
