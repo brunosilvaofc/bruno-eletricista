@@ -5,7 +5,7 @@ const contactInfo = [
   {
     icon: Phone,
     label: "WhatsApp",
-    value: "(21) 97593-1852",
+    value: "(21) 99306-7569",
     href: "https://wa.me/5521973003648?text=Olá! Gostaria de solicitar um orçamento.",
   },
   {
@@ -84,7 +84,7 @@ export function Contact() {
               className="bg-secondary text-secondary-foreground hover:bg-secondary/90 text-lg px-8 py-6"
             >
               <a
-                href="https://wa.me/5521975931852?text=Olá! Gostaria de solicitar um orçamento."
+                href="https://wa.me/552199306-7569?text=Olá! Gostaria de solicitar um orçamento."
                 target="_blank"
                 rel="noopener noreferrer"
               >
