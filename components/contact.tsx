@@ -6,7 +6,7 @@ const contactInfo = [
     icon: Phone,
     label: "WhatsApp",
     value: "(21) 99306-7569",
-    href: "https://wa.me/5521973003648?text=Olá! Gostaria de solicitar um orçamento.",
+    href: "https://wa.me/5521993067569?text=Olá! Gostaria de solicitar um orçamento.",
   },
   {
     icon: Instagram,

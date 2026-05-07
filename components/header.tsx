@@ -70,7 +70,7 @@ export function Header() {
                 </Link>
               ))}
               <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 mt-2 w-full">
-                <a href="tel:+5521973003648" className="flex items-center justify-center gap-2">
+                <a href="tel:+5521993067569" className="flex items-center justify-center gap-2">
                   <Phone className="w-4 h-4" />
                   <span>(21) 99306-7569</span>
                 </a>
