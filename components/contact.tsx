@@ -84,7 +84,7 @@ export function Contact() {
               className="bg-secondary text-secondary-foreground hover:bg-secondary/90 text-lg px-8 py-6"
             >
               <a
-                href="https://wa.me/552199306-7569?text=Olá! Gostaria de solicitar um orçamento."
+                href="https://wa.me/5521993067569?text=Olá! Gostaria de solicitar um orçamento."
                 target="_blank"
                 rel="noopener noreferrer"
               >
