@@ -109,8 +109,8 @@ export function Hero() {
       </div>
 
       {/* Onda inferior decorativa ajustada para contrastar perfeitamente */}
-    <div className="absolute -bottom-4 left-0 right-0 overflow-hidden leading-[0]">
-  <svg viewBox="0 0 1440 120" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" className="block w-full h-[60px] md:h-[90px]">
+    <div className="absolute -bottom-2 left-0 right-0 overflow-hidden leading-[0]">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" className="block w-full h-[120px] md:h-[120px]">
     <path
       d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
       className="fill-[var(--background)]"

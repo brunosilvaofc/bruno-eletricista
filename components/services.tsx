@@ -55,11 +55,11 @@ export function Services() {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="group hover:shadow-lg transition-all duration-300 border-border hover:border-[#fdc700]/50"
+              className="group hover:shadow-lg transition-all duration-300 border-border hover:border-primary/50"
             >
               <CardHeader>
-                <div className="w-14 h-14 bg-[#fdc700]/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#fdc700] group-hover:text-primary-foreground transition-colors">
-                  <service.icon className="w-7 h-7 text-[#fdc700] group-hover:text-primary-foreground" />
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                  <service.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground" />
                 </div>
                 <CardTitle className="text-xl text-card-foreground">{service.title}</CardTitle>
               </CardHeader>
