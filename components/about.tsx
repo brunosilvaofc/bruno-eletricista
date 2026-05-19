@@ -1,5 +1,27 @@
-import { CheckCircle2, Award, Users } from "lucide-react"
+"use client"
+
+import { CheckCircle2, Award, Users, Phone, MapPin, Clock, Instagram } from "lucide-react"
 import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { motion, Variants } from "framer-motion"
+
+// Configuração das animações cascata (TypeScript Safe)
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.12 },
+  },
+}
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+}
 
 const benefits = [
   "Profissional qualificado e experiente",
@@ -19,28 +41,43 @@ export function About() {
       {/* Luz de fundo decorativa */}
       <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-secondary/5 blur-[100px] rounded-full pointer-events-none" />
 
-      <div className="container mx-auto relative z-10">
+      <motion.div 
+        className="container mx-auto relative z-10"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Coluna de Conteúdo (Texto) */}
           <div className="order-2 lg:order-1">
-            <span className="inline-flex items-center gap-2 bg-secondary/10 border border-amber-500/30 text-amber-400 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+            <motion.span 
+              className="inline-flex items-center gap-2 bg-secondary/10 border border-amber-500/30 text-amber-400 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-6"
+              variants={itemVariants}
+            >
               Conheça o Profissional
-            </span>
+            </motion.span>
             
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight text-balance">
+            <motion.h2 
+              className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight text-balance"
+              variants={itemVariants}
+            >
               Por que escolher{" "}
               <span className="text-primary">
                 Bruno Eletricista?
               </span>
-            </h2>
+            </motion.h2>
             
-            <p className="text-slate-300 mb-8 text-lg leading-relaxed text-pretty font-light">
+            <motion.p 
+              className="text-slate-300 mb-8 text-lg leading-relaxed text-pretty font-light"
+              variants={itemVariants}
+            >
               Sou profissional altamente capacitado em instalações e manutenções elétricas residenciais e comerciais. Com formação técnica certificada, meu foco é garantir total segurança, conformidade com as normas técnicas (NBR-5410) e máxima eficiência em cada projeto executado.
-            </p>
+            </motion.p>
 
             {/* Grid de Benefícios Customizados */}
-            <div className="grid sm:grid-cols-2 gap-4">
+            <motion.div className="grid sm:grid-cols-2 gap-4" variants={itemVariants}>
               {benefits.map((benefit, index) => (
                 <div 
                   key={index} 
@@ -50,12 +87,15 @@ export function About() {
                   <span className="text-slate-200 text-sm md:text-base font-medium">{benefit}</span>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </div>
 
           {/* Coluna de Imagem / Elementos Visuais */}
           <div className="order-1 lg:order-2 relative flex justify-center w-full">
-            <div className="relative w-full max-w-sm md:max-w-md aspect-square mx-auto">
+            <motion.div 
+              className="relative w-full max-w-sm md:max-w-md aspect-square mx-auto"
+              variants={itemVariants}
+            >
               
               {/* Moldura de Fundo Decorativa */}
               <div className="absolute inset-0 bg-gradient-to-tr from-amber-500 to-orange-600 rounded-3xl transform rotate-3 scale-[1.02] opacity-30 blur-sm" />
@@ -70,13 +110,15 @@ export function About() {
                   sizes="(max-w-md) 100vw, 450px"
                   priority
                 />
-                
-                {/* Gradiente interno para dar profundidade */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
               </div>
 
               {/* Badge Flutuante 1: Experiência */}
-              <div className="absolute -top-3 left-4 lg:-left-4 bg-slate-900/90 border border-slate-800 backdrop-blur-md p-3 sm:p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-bounce-slow">
+              <motion.div 
+                className="absolute -top-3 left-4 lg:-left-4 bg-slate-900/90 border border-slate-800 backdrop-blur-md p-3 sm:p-4 rounded-2xl shadow-xl flex items-center gap-3"
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              >
                 <div className="p-2 bg-amber-500/10 rounded-xl text-amber-400">
                   <Award className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
@@ -84,10 +126,14 @@ export function About() {
                   <div className="text-sm sm:text-xl font-bold text-white leading-none">Formado</div>
                   <div className="text-slate-400 text-[10px] sm:text-xs mt-0.5">Eletrotécnica NBR-5410</div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Badge Flutuante 2: Clientes */}
-              <div className="absolute -bottom-3 right-4 lg:-right-4 bg-slate-900/90 border border-slate-800 backdrop-blur-md p-3 sm:p-4 rounded-2xl shadow-xl flex items-center gap-3">
+              <motion.div 
+                className="absolute -bottom-3 right-4 lg:-right-4 bg-slate-900/90 border border-slate-800 backdrop-blur-md p-3 sm:p-4 rounded-2xl shadow-xl flex items-center gap-3"
+                animate={{ y: [0, 6, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              >
                 <div className="p-2 bg-emerald-500/10 rounded-xl text-emerald-400">
                   <Users className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
@@ -95,13 +141,13 @@ export function About() {
                   <div className="text-sm sm:text-xl font-bold text-white leading-none">100%</div>
                   <div className="text-slate-400 text-[10px] sm:text-xs mt-0.5">Segurança & Garantia</div>
                 </div>
-              </div>
+              </motion.div>
 
-            </div>
+            </motion.div>
           </div>
 
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

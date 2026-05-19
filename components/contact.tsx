@@ -1,5 +1,26 @@
+"use client"
+
 import { Phone, MapPin, Clock, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { motion, Variants } from "framer-motion"
+
+// Configuração das animações em cascata
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.12 },
+  },
+}
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+}
 
 const contactInfo = [
   {
@@ -38,31 +59,35 @@ export function Contact() {
       id="contato" 
       className="py-20 md:py-28 bg-white border-t border-slate-100 relative overflow-hidden px-6 md:px-12 lg:px-16"
     >
-      {/* Detalhe de Luz de Fundo Suave (Light) */}
+      {/* Detalhe de Luz de Fundo Suave */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-amber-500/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="container mx-auto relative z-10">
+      <motion.div 
+        className="container mx-auto relative z-10"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+      >
         
         {/* Cabeçalho da Seção */}
-        <div className="text-center mb-16">
-         
+        <motion.div className="text-center mb-16" variants={itemVariants}>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight text-balance">
             Vamos Fechar o Seu Orçamento?
           </h2>
           <p className="text-slate-600 max-w-xl mx-auto text-base md:text-lg font-light text-pretty">
             Escolha o canal mais prático para você. Estou pronto para tirar suas dúvidas e garantir a segurança do seu imóvel.
           </p>
-        </div>
+        </motion.div>
 
         <div className="max-w-4xl mx-auto">
           {/* Grid de Informações de Contato */}
-          <div className="grid sm:grid-cols-2 gap-4 md:gap-6 mb-16">
+          <motion.div className="grid sm:grid-cols-2 gap-4 md:gap-6 mb-16" variants={itemVariants}>
             {contactInfo.map((info, index) => (
               <div
                 key={index}
                 className="flex items-center gap-4 p-5 bg-slate-50/60 border border-slate-100 rounded-2xl hover:border-slate-300 hover:bg-white hover:shadow-md transition-all group"
               >
-                {/* Container do Ícone customizado */}
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 border ${info.color}`}>
                   <info.icon className="w-6 h-6" />
                 </div>
@@ -84,12 +109,14 @@ export function Contact() {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
 
-          {/* Banner de CTA Final Estacado (Fundo Claro Premium) */}
-          <div className="relative bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-3xl p-8 md:p-12 text-center shadow-sm overflow-hidden">
+          {/* Banner de CTA Final */}
+          <motion.div 
+            className="relative bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-3xl p-8 md:p-12 text-center shadow-sm overflow-hidden"
+            variants={itemVariants}
+          >
             <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-amber-500/5 blur-[60px] rounded-full pointer-events-none" />
-            
 
             <p className="text-slate-600 mb-8 max-w-lg mx-auto text-sm md:text-base font-light leading-relaxed">
               Evite riscos com instalações mal feitas. Clique abaixo para iniciar uma conversa direta no WhatsApp. O orçamento é rápido, transparente e sem compromisso!
@@ -112,10 +139,10 @@ export function Contact() {
                 Conversa no WhatsApp
               </a>
             </Button>
-          </div>
-
+          </motion.div>
         </div>
-      </div>
+        
+      </motion.div>
     </section>
   )
 }

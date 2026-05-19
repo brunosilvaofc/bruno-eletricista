@@ -1,25 +1,48 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X, Phone } from "lucide-react"
-import { Button } from "@/components/ui/button"
-
-const navLinks = [
-  { href: "#inicio", label: "Início" },
-  { href: "#servicos", label: "Serviços" },
-  { href: "#sobre", label: "Sobre" },
-  { href: "#contato", label: "Contato" },
-]
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  // Começa como false para iniciar escondido no topo da página
+  const [isVisible, setIsVisible] = useState(false)
+  const [lastScrollY, setLastScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+
+      // Se o menu mobile estiver aberto, mantém o header visível
+      if (isMenuOpen) return
+
+      // Só aparece quando rolar para baixo E passar de 80px do topo.
+      // Se rolar para cima ou voltar ao topo, ele some.
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        setIsVisible(true)
+      } else {
+        setIsVisible(false)
+      }
+
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [lastScrollY, isMenuOpen])
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-secondary">
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 bg-secondary/80 backdrop-blur-md transition-transform duration-300 ease-in-out ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-center h-16 md:h-20">
           <Link href="/" className="flex items-center">
             <Image
               src="/images/logo.png"
@@ -30,54 +53,7 @@ export function Header() {
               priority
             />
           </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-secondary-foreground hover:text-primary transition-colors font-medium"
-              >
-                {link.label}
-              </Link>
-            ))}
-        
-          </nav>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-secondary-foreground p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <nav className="md:hidden pb-4 border-t border-secondary-foreground/10">
-            <div className="flex flex-col gap-2 pt-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-secondary-foreground hover:text-primary transition-colors py-2 font-medium"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 mt-2 w-full">
-                <a href="tel:+5521993067569" className="flex items-center justify-center gap-2">
-                  <Phone className="w-4 h-4" />
-                  <span>(21) 99306-7569</span>
-                </a>
-              </Button>
-            </div>
-          </nav>
-        )}
+        </div>    
       </div>
     </header>
   )
