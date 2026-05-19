@@ -7,7 +7,7 @@ export function Hero() {
       id="inicio"
       className="relative min-h-screen flex items-center pt-32 md:pt-40 overflow-hidden"
       style={{
-        background: `radial-gradient(circle at 50% 30%, #222456 0%, #14152e 70%)`,
+        background: `radial-gradient(circle at 50% 30%, #000041 0%, #000041 70%)`,
       }}
     >
       {/* Efeito de Luz de Fundo (Glow Elétrico) */}

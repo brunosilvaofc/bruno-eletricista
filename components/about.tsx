@@ -14,17 +14,17 @@ export function About() {
   return (
     <section 
       id="sobre" 
-      className="py-20 md:py-28 bg-slate-950 border-t border-slate-900 relative overflow-hidden px-6 md:px-12 lg:px-16"
+      className="py-20 md:py-28 bg-secondary border-t border-slate-900 relative overflow-hidden px-6 md:px-12 lg:px-16"
     >
       {/* Luz de fundo decorativa */}
-      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-amber-500/5 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-secondary/5 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="container mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Coluna de Conteúdo (Texto) */}
           <div className="order-2 lg:order-1">
-            <span className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+            <span className="inline-flex items-center gap-2 bg-secondary/10 border border-amber-500/30 text-amber-400 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
               Conheça o Profissional
             </span>
             
@@ -61,7 +61,7 @@ export function About() {
               <div className="absolute inset-0 bg-gradient-to-tr from-amber-500 to-orange-600 rounded-3xl transform rotate-3 scale-[1.02] opacity-30 blur-sm" />
               
               {/* Container Principal do Box de Imagem */}
-              <div className="absolute inset-0 bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
+              <div className="absolute inset-0 bg-secondary border border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/background.png"
                   alt="Bruno Eletricista em atendimento"
