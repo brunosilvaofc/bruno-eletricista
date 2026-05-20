@@ -7,7 +7,7 @@ import './globals.css'
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Eletricista Bruno - Serviços Elétricos Profissionais',
+  title: 'Eletricista Bruno - Serviços Elétricos Profissional',
   description: 'Serviços elétricos de qualidade. Instalação, manutenção, reparos elétricos residenciais e comerciais. Ligue: (21) 99306-7569',
   keywords: 'eletricista, serviços elétricos, instalação elétrica, Rio de Janeiro, reparos elétricos',
 }

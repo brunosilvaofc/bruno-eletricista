@@ -17,10 +17,12 @@ export function Footer() {
               height={50}
               className="h-14 w-auto"
             />
-            <p className="text-secondary-foreground/70 text-[12px] text-center md:text-left">
-              Serviços elétricos 
+            <p className="text-secondary-foreground/70 text-[10px] text-center md:text-left">
+              "Consagre ao Senhor tudo o que você faz,  
               <br />
-              Rio de Janeiro
+              e os seus planos serão bem-sucedidos."
+              <br />
+              Provérbios 16.3
             </p>
           </div>
 
