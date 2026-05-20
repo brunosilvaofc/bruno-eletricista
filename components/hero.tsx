@@ -70,7 +70,7 @@ export function Hero() {
           >
             Segurança Elétrica para seu{" "}
             <span className="text-primary">
-              Lar ou Empresa.
+              Lar ou Empresa
             </span>
           </motion.h1>
 
